@@ -1,6 +1,7 @@
 #ifndef ARRAY_BASED_PD_H_
 #define ARRAY_BASED_PD_H_
 #include <string>
+using namespace std;
 
 /** Specification file for the array-based phone directory.
  */
@@ -59,19 +60,24 @@ private:
 		Directory_Entry() {} // Default no-argument constructor 
 		Directory_Entry(std::string the_name, std::string the_number) {
 			// constructor not implemented yet
+			Name = the_name;
+			Number = the_number;
 		}
 		std::string get_name() const {
-			return ""; // method not implemented yet
+			return Name; // method not implemented yet
 		}
 		std::string get_number() const {
-			return ""; // method not implemented yet
+			return Number; // method not implemented yet
 		}
 		void set_number(const std::string& new_number) {
 			// method not implemented yet
+			Number = new_number;
 		}
 	
 	private:
-
+		string Name;
+		string Number;
+		string Entry[5][2];
 	};
 
 	// Private Functions
@@ -88,7 +94,6 @@ private:
 		@param number The number to be added
 		*/
 	void add(const std::string& name, const std::string& number);
-
 	/** Removes the entry at the given index.
 		@param index The index of the entry to be removed
 		*/
